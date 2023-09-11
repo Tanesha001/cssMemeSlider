@@ -67,13 +67,17 @@ h1 {
 }
 
 .pagination-conteiner {
-    width: 0.9em;
-    height: 0.9em;
+    width: 1.2em;
+    height: 1.2em;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: transparent;
+}
+
+.pagination-conteiner:hover {
+    cursor: pointer;
 }
 
 .pagination-itm {
@@ -84,17 +88,17 @@ h1 {
     cursor:pointer;
 }
 
-.active {
+.pagination-itm.active {
     background-color: transparent;
     border: solid 0.15rem #8383b1;
 }
 
-.pagination-itm:hover {
+.pagination-conteiner:hover .pagination-itm {
     background-color: #fff;
     transition-duration: 1s;
 }
 
-.active:hover {
+.active:hover .pagination-itm {
     background-color: transparent;
     border: solid 0.15rem #fff;
     transition-duration: 1s;

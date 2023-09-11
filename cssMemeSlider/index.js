@@ -1,6 +1,7 @@
 const sliderImages = document.querySelectorAll('.slider-img'),
     sliderLine = document.querySelector('.slider-line'),
-    sliderDots = document.querySelectorAll('.pagination-itm');
+    sliderDots = document.querySelectorAll('.pagination-conteiner');
+    smallDots = document.querySelectorAll('.pagination-itm');
     text = document.querySelectorAll('.meme-text');
     textLine = document.querySelector('.text-line')
          
@@ -38,10 +39,21 @@ function rollSlider() {
 function thisSlide(index) {
     sliderDots.forEach(item => item.classList.remove('active'));
     sliderDots[index].classList.add('active');
+
+    smallDots.forEach(item => item.classList.remove('active'));
+    smallDots[index].classList.add('active');
 }
 
 // Вешает клик на dot
 sliderDots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+        sliderCount = index;
+        rollSlider();
+        thisSlide(sliderCount);
+    })
+})
+
+smallDots.forEach((dot, index) => {
     dot.addEventListener('click', () => {
         sliderCount = index;
         rollSlider();
