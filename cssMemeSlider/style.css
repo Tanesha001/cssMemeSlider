@@ -12,7 +12,8 @@ body {
 
 h1 {
     text-align: center;
-    font-size: 40px;
+    font-size: 3rem;
+    color: #fff;
 }
 
 .slider-conteiner {
@@ -21,35 +22,53 @@ h1 {
 }
 
 .slider{
-    position: relative;
-    max-width: 450px;
+    margin: auto;
+    max-width: 45%;
     overflow: hidden;
 }
 
-.slider-line{
+.slider-line {
     display: flex;
-    align-items: center;
+    transition: all 1s;
+}
+
+.text-line {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    width: 500%;
     transition: all 1s;
 }
 
 .slider-img {
     vertical-align: top; 
-    height: 550px;
     border-radius: 5%;
-    max-width: 450px;
-    margin-right: 25px;
+    width: 100%;
+    margin-right: 10%;
+}
+
+.text-slider {
+    margin-top: 5%;
+    width: 70%;
+    overflow: hidden;
+}
+
+.text-pagination {
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    font-size: 1.4em;
 }
 
 .pagination {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    margin: 40px 0px 30px 0px;
+    margin-top: 5%;
 }
 
 .pagination-conteiner {
-    width: 26px;
-    height: 26px; 
+    width: 0.9em;
+    height: 0.9em;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -58,25 +77,77 @@ h1 {
 }
 
 .pagination-itm {
-    width: 16px;
-    height: 16px;
+    width: 0.5em;
+    height: 0.5em;
     border-radius: 50%;
     background-color: #8383b1;
     cursor:pointer;
 }
 
 .active {
-    width: 12px;
-    height: 12px;
     background-color: transparent;
-    border: solid 2px #8383b1;
+    border: solid 0.15rem #8383b1;
 }
 
 .pagination-itm:hover {
     background-color: #fff;
+    transition-duration: 1s;
 }
 
 .active:hover {
     background-color: transparent;
-    border: solid 2px #fff;
+    border: solid 0.15rem #fff;
+    transition-duration: 1s;
+}
+
+footer{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin-top: 5%;
+    width: 100%;
+}
+
+.git-pic {
+    width: 2em;
+    margin-right: 2em;
+}
+
+.git-pic:hover, .git-pic:focus, .git-pic:active{ 
+    transition-duration: 1s;
+    border: 0;
+    outline: 0;  
+    transform: scale(1.1);
+} 
+
+.year {
+    color: #b4abab;
+    font-weight: 600;
+}
+
+.rs-text {
+    width: 5em;
+    margin-right: 2em;
+}
+  
+.rs-text:hover, .rs-text:focus, .rs-text:active{ 
+    transition-duration: 1s;
+    border: 0;
+    outline: 0;  
+    transform: scale(1.1);
+} 
+
+@media (max-width: 900px) {
+    .text-pagination {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .text-slider {
+        width: 100%;
+    }
+
+    footer {
+        margin-top: 15%;
+    }
 }
